@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-glow: var(--accent-glow);
+  
+  --color-border-card: var(--border-card);
+  --color-border-hover: var(--border-hover);
+}
+
+:root {
+  /* Light Theme Variables */
+  --bg-primary: #F9FAFB; /* Pure white/slate */
+  --bg-secondary: #FFFFFF; /* Sleek card white */
+  --bg-tertiary: #F3F4F6;
+  
+  --text-primary: #111827; /* Near black */
+  --text-secondary: #4B5563; /* Slate grey */
+  --text-muted: #9CA3AF;
+  
+  --accent: #65A30D; /* Sleek cyber green-olive for light */
+  --accent-hover: #4D7C0F;
+  --accent-glow: rgba(101, 163, 13, 0.08);
+  
+  --border-card: #E5E7EB; /* Subtle grey */
+  --border-hover: #D1D5DB;
+}
+
+:root.dark {
+  /* Dark Theme Variables */
+  --bg-primary: #0A0A0A; /* Sleek rich black */
+  --bg-secondary: #121212; /* Charcoal dark for card background */
+  --bg-tertiary: #1A1A1A;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+  
+  --accent: #ADFF2F; /* Cyber Green-Yellow */
+  --accent-hover: #9BE526;
+  --accent-glow: rgba(173, 255, 47, 0.12);
+  
+  --border-card: #1E1E1E;
+  --border-hover: #2E2E2E;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Modern premium scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-card);
+    border-radius: 4px;
+    border: 2px solid var(--bg-secondary);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+  }
+}
